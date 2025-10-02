@@ -1,0 +1,271 @@
+PRATICAL NO: 1
+
+A. Python program to demonstrate various data types and check their types.
+Input:
+
+a = 10
+print("Value:", a, "Type:", type(a))
+b = 3.14
+print("Value:", b, "Type:", type(b))
+c = "Hello, Python!"
+print("Value:", c, "Type:", type(c))
+d = True
+print("Value:", d, "Type:", type(d))
+e = [1, 2, 3, 4, 5]
+print("Value:", e, "Type:", type(e))
+f = (10, 20, 30)
+print("Value:", f, "Type:", type(f))
+g = {1, 2, 3}
+print("Value:", g, "Type:", type(g))
+h = {"name": "Alice", "age": 25}
+print("Value:", h, "Type:", type(h))
+
+B. Perform Input and Output Operations.
+Input:
+
+message = input("Enter a message: ")
+print("You entered:", message)
+
+
+Practical No: 2
+
+A. Write a Python program to check whether an entered number is Armstrong or not using a while loop.
+Input: 
+
+num = int(input("Enter a number: "))
+temp = num
+sum = 0
+n = len(str(num))
+while temp > 0:
+    digit = temp % 10
+    sum = sum + (digit ** n)
+    temp = temp // 10   
+if num == sum:
+    print(num, "is an Armstrong number")
+else:
+    print(num, "is not an Armstrong number")
+
+
+B. Write a Python program to demonstrate the use of break and continue statements in loops.
+Input:
+
+print("Using continue:")
+for i in range(1, 6):
+    if i == 3:
+        continue
+print(i)
+print("Using break:")
+for i in range(1, 6):
+    if i == 4:
+        break
+print(i)
+
+Practical No: 3
+
+A. Write a Python program to check whether a number is even or odd.
+Input:
+
+num = int(input("Enter a number: "))
+if num % 2 == 0:
+    print(f"{num} is an even number.")
+else:
+    print(f"{num} is an odd number.")
+
+
+B. Write a Python program to find the largest among three numbers.
+input:
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+if num1 >= num2 and num1 >= num3:
+    largest = num1
+elif num2 >= num1 and num2 >= num3:
+    largest = num2
+else:
+    largest = num3
+print(f"The largest number is: {largest}")
+
+
+Practical No 4
+
+a. Write a Python program using various datatypes and check their types.
+Input: 
+
+celsius = float(input("Enter temperature in Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print(f"{celsius}°C is equal to {fahrenheit}°F")
+
+b. Write a Python program to perform Input and Output operations (accept a message and display it).
+
+Input:
+
+def add(x, y):
+return x + y
+def subtract(x, y):
+return x - y
+def multiply(x, y):
+return x * y
+def divide(x, y):
+if y != 0:
+return x / y
+else:
+return "Cannot divide by zero"
+print("Select operation:")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+choice = input("Enter choice (1/2/3/4): ")
+
+if choice in ['1', '2', '3', '4']:
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+if choice == '1':
+print("Result:", add(num1, num2))
+elif choice == '2':
+print("Result:", subtract(num1, num2))
+elif choice == '3':
+print("Result:", multiply(num1, num2))
+elif choice == '4':
+
+print("Result:", divide(num1, num2))
+else:
+print("Invalid input. Please select a valid option
+
+Practical No 5
+A. Write a Python program to find HCF (GCD) of two numbers.
+Input: 
+
+def compute_hcf(x, y):
+ while y:
+  x, y = y, x % y
+ return x
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+hcf = compute_hcf(num1, num2)
+print("The HCF (GCD) of", num1, "and", num2, "is", hcf)
+
+B. Write a Python program to convert a decimal number to binary, octal, and hexadecimal.
+Input:
+
+decimal = int(input("Enter a decimal number: "))
+binary = bin(decimal)
+octal = oct(decimal)
+hexadecimal = hex(decimal)
+print("Binary:", binary)
+print("Octal:", octal)
+print("Hexadecimal:", hexadecimal)
+
+
+Practical No 6
+a. Write a Python program to add two numbers.
+Input: 
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+sum = num1 + num2
+print("The sum is:", sum)
+
+
+b. Write a Python program to calculate the area of a triangle.
+Input:
+
+base = float(input("Enter the base of the triangle: "))
+height = float(input("Enter the height of the triangle: "))
+area = 0.5 * base * height
+print("The area of the triangle is:", area)
+
+Practical No 7
+a. Write a Python program to apply indexing and slicing on an array.
+Input: 
+
+import array
+arr =array.array('i',[10,20,30,40,50,60,70])
+print("Element at index 0:",arr[0])
+print("Element at Insex 3:",arr[3])
+print("Elements from Insex 1 to 4:",arr[1:5])
+print("Every second element:",arr[::2])
+print("Array in reverse order:",arr[::-1])
+
+
+b. Write a Python program to add and remove elements from an array.
+Input:
+
+
+import array
+arr=array.array('i',[10,20,30])
+arr.append(40)
+arr.insert(1,15)
+print("Array after adding element:",arr)
+arr.remove(20)
+remove_item = arr.pop()
+print("Araay after removing element:",arr)
+print("Popped item:", remove_item)
+
+
+Practical No 8
+a. Write a Python program to demonstrate string immutability and use a multiline string.
+Input:
+
+string1="Hello"
+print("Original String:", string1)
+new_string = "h"+ string1[1:]
+print("Modified String(New string crested):", new_string)
+multiline_string = """This is a multiline string.
+It can span multiple lines.
+It is often used for long text or documentation."""
+print("\n multiline String:\n", multiline_string)
+
+
+b. Write a Python program to compare and concatenate two strings.
+Input:
+
+string1= "Python"
+string2 = "Programming"
+if string1 == string2:
+    print("Both strings are equal")
+else :
+    print("Strings are not equal")
+concatinated = string1+ " " + string2
+print("Concatinated String:", concatinated)
+
+
+Practical No 10
+a. Write a Python program to swap two variables.
+Input:
+
+x = 5
+y = 10
+print("Before swapping: x =", x, " y =", y)
+x, y = y, x
+print("After swapping: x =", x, " y =", y)
+
+
+b. Write a Python program to shuffle a deck of cards.
+Input:
+
+import random
+suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+deck = []
+for suit in suits:
+    for rank in ranks:
+        deck.append(f"{rank} of {suit}")
+print("Original Deck:")
+print(deck)
+random.shuffle(deck)
+print("\nShuffled Deck:")
+print(deck)
+
+
+c. Write a Python program to import built in and user defined modules.
+Input: 
+
+def greet(name):
+    return f"Hello, {name}!"
+import math
+import my_module # user-defined module
+print("Square root of 16:", math.sqrt(16))
+print(my_module.greet("Rutuja"))
+
