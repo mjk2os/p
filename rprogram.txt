@@ -1,0 +1,421 @@
+Practical No: 2
+Input:
+
+A. Write an R program to manage data and exhibit operations on it using
+List data structure ?
+
+empId=c(1,2,3,4)
+empName=c("Debi","Subham","sandeep","shiba")
+numberofEmp=4
+empList=list( 
+  "ID"=empId,
+  "Name"=empName,
+  "Total staff"=numberofEmp
+)
+print(empList)
+cat("Assessing name components using $ command\n")
+print(empList$Names)
+
+B. Write an R program to manage data and exhibit operations on it using
+Data Frames.
+
+Input:
+age<-c(40,49,48,67,52,53)
+salary<-c(103200,106200,150200,10606,10390,14070,10220)
+gender<-c("male","male","transgender","female","male","female",
+          "transgender")
+employee<-data.frame(age, salary, gender=factor(gender))
+print(employee)
+print(is.factor(employee$gender))
+
+Practical No: 3
+
+Input:
+A. Write an R program to store and access string in R objects(vectors,
+matrix, arrays, data frames, and lists)
+
+#Vector:
+cat("--- 1. Strings in a Vector ---\n\n")
+string_vector <- c("apple", "banana", "cherry")
+print("The string vector:")
+print(string_vector)
+cat("\nGetting the second item from the vector:", string_vector[2], "\n\n\n")
+
+# MATRIX
+cat("--- 2. Strings in a Matrix ---\n\n")
+
+string_matrix <- matrix(
+  c("R", "Python", "Java", "SQL"),
+  nrow = 2, # We want 2 rows
+  ncol = 2  # We want 2 columns
+)
+print("The string matrix:")
+print(string_matrix)
+cat("\nGetting the item in row 1, column 2:", string_matrix[1, 2], "\n\n\n")
+
+# --- 3. DATA FRAME ---
+cat("--- 3. Strings in a Data Frame ---\n\n")
+employee_data <- data.frame(
+  name = c("Alice", "Bob"),
+  job = c("HR", "Engineering")
+)
+print("The data frame:")
+print(employee_data)
+cat("\nGetting the 'name' column:\n")
+print(employee_data$name)
+cat("\nGetting Bob's job:", employee_data[2, "job"], "\n\n\n")
+
+# --- 4. LIST ---
+cat("--- 4. Strings in a List ---\n\n")
+project_info <- list(
+  projectName = "Website Redesign",
+  teamMembers = c("Eve", "Frank", "Grace")
+)
+print("The list:")
+print(project_info)
+cat("\nGetting the project name from the list:", project_info$projectName, "\n")
+cat("Getting the team members from the list:\n")
+print(project_info$teamMembers)
+
+
+Input:
+B. Write an R program to demonstrate use of various string manipulation
+functions.
+
+# --- 1. Concatenating (joining) strings with str_c() ---
+cat("--- 1. Joining Strings ---\n")
+first_name <- "John"
+last_name <- "Doe"
+full_name <- str_c(first_name, " ", last_name)
+cat("Joined name:", full_name, "\n\n")
+
+# --- 2. Finding the length of a string with str_length() ---
+cat("--- 2. String Length ---\n")
+string1 <-"Hello, World!"
+len <- str_length(string1)
+cat("The length of '", string1, "' is:", len, "\n\n", sep="")
+
+# --- 3. Changing case with str_to_upper() and str_to_lower() ---
+cat("--- 3. Changing Case ---\n")
+upper_case <- str_to_upper(string1)
+cat("Uppercase:", upper_case, "\n")
+lower_case <- str_to_lower("HELLO")
+cat("Lowercase:", lower_case, "\n\n")
+
+# --- 4. Trimming whitespace with str_trim() ---
+cat("--- 4. Trimming Whitespace ---\n")
+cat("Original string: '", string2, "'\n", sep="")
+trimmed_string <- str_trim(string2)
+cat("Trimmed string:  '", trimmed_string, "'\n\n", sep="")
+
+# --- 5. Detecting if a pattern exists with str_detect() ---
+cat("--- 5. Detecting Patterns ---\n")
+has_fox <- str_detect(sentence, "fox")
+has_cat <- str_detect(sentence, "cat")
+cat("Does the sentence contain 'fox'?", has_fox, "\n")
+cat("Does the sentence contain 'cat'?", has_cat, "\n\n")
+
+# --- 6. Extracting parts of a string with str_sub() ---
+cat("--- 6. Extracting Substrings ---\n")
+substring <- str_sub(sentence, 1, 5)
+cat("The first 5 characters are: '", substring, "'\n\n", sep="")
+
+# --- 7. Replacing parts of a string with str_replace() ---
+cat("--- 7. Replacing Patterns ---\n")
+new_sentence <- str_replace(sentence, "fox", "cat")
+cat("Original sentence:", sentence, "\n")
+cat("New sentence:     ", new_sentence, "\n\n")
+
+# --- 8. Splitting a string with str_split() ---
+cat("--- 8. Splitting a String ---\n")
+words <- str_split(string1, " ")
+cat("Splitting '", string1, "' by space gives us:\n", sep="")
+print(words[[1]])
+
+
+Practical No 4
+Input:
+a. Write an R program to apply built-in statistical functions. [Hint: mean,
+median, standard deviation and others]
+
+[Hint: mean,median, standard deviation and others]
+student_scores<-c(88,92,80,75,85,95,88,79,81,90,65,84,88,91,74)
+print(student_scores)
+mean_score<-mean(student_scores)
+cat("Mean(Average) score:",mean_score,"\n")
+median_score<-median(student_scores)
+cat("Median score:", median_score,"\n")
+std_dev<-sd(student_scores)
+cat("standard Deviation:",round(std_dev,2),"\n")
+variance_score<-var(student_scores)
+cat("variance:",round(variance_score,2),"\n\n")
+score_range<-range(student_scores)
+cat("range of score:",score_range[1],"-",score_range[2],"\n\n")
+cat("overall summary of the scores:\n")
+print(summary(student_scores))
+
+Input:
+b. Write an R program to demonstrate Linear and Multiple Regression
+analysis.
+experience<-c(1,2,3,4,5,6,8,10)
+salary<-c(45,50,60,65,75,80,95,110)
+cat("sample data:\n")
+cat("experience(years):",experience,"\n")
+cat("salary($'000s): ",salary,"\n\n")
+
+model_linear<-lm(salary~experience)
+
+cat("summary of the linear regression model:\n")
+print(summary(model_linear))
+
+# Multiple Regression.
+data(mtcars)
+cat("using the 'mtcars' dataset.\n")
+cat("predicting 'mpg' based on 'wt'(weight) and 'hp'(horsepower).\n\n")
+modal_multiple<-lm(mpg~wt+hp,data=mtcars)
+cat("summary of the multiple regression modal:\n")
+print(summary(modal_multiple))
+
+Practical No 5
+Input:
+A. Normal Distribution. [Hint: dnorm(), pnorm(), qnorm(), rnorm()].
+
+Codes:- 
+cat("------ Normal Distribution Demonstration ------\n\n")
+mean_val <- 70  # Example: Average test score
+std_dev_val <- 10  # Example: Standard deviation of test scores
+cat("Parameters: Mean = ", mean_val, ", Standard Deviation = ", std_dev_val, "\n\n")
+
+# --- i. dnorm(): Probability Density Function ---
+x_point <- 75
+density <- dnorm(x = x_point, mean = mean_val, sd = std_dev_val)
+cat("1. dnorm(): The density (height of the curve) at x = 75 is:", round(density, 4), "\n")
+
+# --- ii. pnorm(): Cumulative Distribution Function ---
+prob_less_than_85 <- pnorm(q = 85, mean = mean_val, sd = std_dev_val)
+cat("2. pnorm(): The probability of a value being <= 85 is:", round(prob_less_than_85, 4), "\n")
+
+prob_greater_than_85 <- pnorm(q = 85, mean = mean_val, sd = std_dev_val, lower.tail = FALSE)
+cat("   (The probability of a value being > 85 is:", round(prob_greater_than_85, 4), ")\n")
+
+# --- iii. qnorm(): Quantile Function ---
+percentile_90 <- qnorm(p = 0.90, mean = mean_val, sd = std_dev_val)
+cat("3. qnorm(): The value for the 90th percentile is:", round(percentile_90, 2), "\n")
+
+# --- iv. rnorm(): Random Number Generation ---
+num_samples <- 10
+random_scores <- rnorm(n = num_samples, mean = mean_val, sd = std_dev_val)
+cat("4. rnorm(): Ten random numbers from this distribution are:\n")
+print(round(random_scores, 2))
+Output:-
+
+B. Binomial Distribution: [Hint: dbinom(), pbinom(),qbinom(),rbinom()]
+
+Codes:- 
+# --- Binomial Distribution ---
+# Parameters for the binomial distribution
+num_trials <- 10  # n
+prob_success <- 0.5  # p (e.g., probability of heads in a coin toss)
+
+# i. dbinom(): Probability mass function
+prob_exactly_5_successes <- dbinom(5, size = num_trials, prob = prob_success)
+print(paste("Binomial Distribution - Probability of exactly 5 successes:", round(prob_exactly_5_successes, 4)))
+
+# ii. pbinom(): Cumulative distribution function
+prob_up_to_5_successes <- pbinom(5, size = num_trials, prob = prob_success)
+print(paste("Binomial Distribution - Probability of up to 5 successes:", round(prob_up_to_5_successes, 4)))
+
+# iii. qbinom(): Quantile function
+quantile_75th_binom <- qbinom(0.75, size = num_trials, prob = prob_success)
+print(paste("Binomial Distribution - 75th percentile (number of successes):", quantile_75th_binom))
+
+# iv. rbinom(): Random number generation
+random_binomial_numbers <- rbinom(3, size = num_trials, prob = prob_success)
+print("Binomial Distribution - 3 random numbers of successes:")
+print(random_binomial_numbers)
+
+
+Practical No 6
+Input:
+
+A. Write an R program to demonstrate various ways of performing Graphical
+analysis.[Hint: Plots, Special Plots, Storing Graphics].
+
+Codes:- 
+# --- Section 1: Create Basic Plots ---
+# 1. Scatter Plot
+plot(x = iris$Sepal.Length[1:10], 
+     y = iris$Sepal.Width[1:10],
+     main = "Scatter Plot of Iris Sepal Dimensions",
+     xlab = "Sepal Length",
+     ylab = "Sepal Width")
+# --- Section 2: Storing a Graphic ---
+# Step 1: Tell R you want to start creating a PNG file.
+png("My_Iris_Boxplot.png")
+boxplot(Petal.Width ~ Species, data = iris,
+        main = "Box Plot of Petal Width by Species",
+        ylab = "Petal Width",
+        col = c("red", "green", "blue"))  # Added some colors for each species
+dev.off()
+
+
+Codes:-
+library(ggplot2)
+# --- Section 1: Create Basic Plots with ggplot2 ---
+# 1. Scatter Plot
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_point() +  # Adds the points to create the scatter plot
+  labs(title = "Scatter Plot of Iris Sepal Dimensions",
+       x = "Sepal Length",
+       y = "Sepal Width")
+
+# 2. Histogram
+ggplot(data = iris, aes(x = Petal.Length)) +
+  geom_histogram(binwidth = 0.25, fill = "lightblue", color = "black") +  # 'fill' is bar color, 'color' is border
+  labs(title = "Histogram of Iris Petal Length",
+       x = "Petal Length")
+
+# 3. Box Plot
+ggplot(data = iris, aes(x = Species, y = Petal.Width)) +
+  geom_boxplot() +  # Adds the box plots
+  labs(title = "Box Plot of Petal Width by Species",
+       x = "Species",
+       y = "Petal Width")
+# --- Section 2: Storing a ggplot Graphic ---
+my_iris_plot <- ggplot(data = iris, aes(x = Species, y = Petal.Width, fill = Species)) +
+  geom_boxplot() +
+  labs(title = "Box Plot of Petal Width by Species",
+       x = "Species",
+       y = "Petal width") +
+  theme(legend.position = "none")  # Hide the legend, as the x-axis labels are enough
+ggsave("My_Iris_Boxplot_ggplot.png", plot = my_iris_plot, width = 6, height = 4)
+
+
+Practical No 7
+
+A. Write an R program to demonstrate OOP concepts, the construction 
+anduse of S3 class. 
+ 
+employee1 <- list(name = "Peter", age = 21, role = "Developer") 
+class(employee1) <- "Employee_Info" 
+print.Employee_Info <- function(obj){ 
+  cat(obj$name, "\n") 
+  cat(obj$age, "years old\n") 
+  cat("Roll:", obj$role, "\n") 
+} 
+print(employee1) 
+
+Practical No 8
+
+A.Write an R program to demonstrate data interface with CSV files [Hint: Creating data for CSV, analyzing, writing CSV files].
+
+Codes:- 
+employee_data <- data.frame(
+  EmployeeID = c(101, 102, 103, 104, 105),
+  Name = c("John Smith", "Jane Doe", "Peter Jones", "Mary Williams", "David Brown"),
+  Department = c("Sales", "Marketing", "HR", "Sales", "IT"),
+  Salary = c(55000, 62000, 58000, 56000, 75000)
+)
+print("-- Original Data Frame in R ---")
+print(employee_data)
+write.csv(employee_data, "employees.csv", row.names = FALSE)
+print("\n--- Data successfully written to employees.csv ---")
+read_employee_data <- read.csv("employees.csv")
+print("\n--- Data Read from employees.csv ---")
+print(read_employee_data)
+print("\n--- Analysis of the CSV Data (Summary) ---")
+summary(read_employee_data)
+print("\n--- Structure of the Loaded Data ---")
+str(read_employee_data)
+
+B.Write an R program to work with spreadsheet (Excel) programs. [Hint:installing, loading, verifying, creating data for xlsx file].
+
+Codes:- 
+library(openxlsx)
+print("--- 'openxlsx' package loaded successfully ---")
+product_inventory <- data.frame(
+  ProductID = c("A-001", "A-002", "B-001", "B-002", "C-001"),
+  ProductName = c("Laptop", "Mouse", "Keyboard", "Monitor", "Webcam"),
+  StockQuantity = c(50, 250, 150, 75, 200),
+  Price = c(1200.00, 25.50, 75.00, 300.00, 45.75)
+)
+print("\n--- Original Product Inventory Data Frame ---")
+print(product_inventory)
+write.xlsx(product_inventory, "inventory.xlsx")
+print("\n--- Data successfully written to inventory.xlsx ---")
+read_inventory_data <- read.xlsx("inventory.xlsx")
+print("\n--- Data Read from inventory.xlsx ---")
+print(read_inventory_data)
+
+
+Practical No 9
+A.write a R program to manage data using dplyr Package[Hint: group by(),
+%>%,mutate(), rename(),arrange(), filter(), select()].
+
+Codes:-
+library(dplyr)
+data <- data.frame(
+  name = c("Alice", "Bob", "Charlie", "David", "Emily"),
+  age = c(25, 30, 22, 28, 27),
+  city = c("New York", "Los Angeles", "Chicago", "London", "Paris")
+)
+filtered_data <- filter(data, age > 25)
+selected_data <- select(data, name, age)
+arranged_data <- arrange(data, desc(age))
+mutated_data <- mutate(data, is_adult = age >= 18)
+summary_data <- summarize(data, mean_age = mean(age))
+grouped_data <- group_by(data, city)
+summarized_grouped_data <- summarize(grouped_data, mean_age = mean(age))
+result <- data %>%
+  filter(age > 25 & city == "New York") %>%
+  select(name)
+
+
+Codes:-
+library(dplyr)
+mtcars %>%
+  select(mpg, cyl, disp)
+mtcars %>%
+  filter(cyl == 4)
+mtcars %>%
+  arrange(desc(mpg))
+mtcars %>%
+  mutate(mpg_per_cyl = mpg / cyl)
+mtcars %>%
+  group_by(cyl) %>%
+  summarize(mean_mpg = mean(mpg))
+mtcars %>%
+  filter(cyl == 4) %>%
+  select(mpg, hp) %>%
+  arrange(desc(hp))
+
+Codes:-
+
+library(dplyr)
+# Example using mtcars dataset
+mtcars %>%
+  group_by(cyl) %>%
+  mutate(avg_mpg_per_cyl = mean(mpg)) %>%
+  rename(num_cylinders = cyl) %>%
+  arrange(desc(avg_mpg_per_cyl)) %>%
+  filter(avg_mpg_per_cyl > 20) %>%
+  select(num_cylinders, avg_mpg_per_cyl)
+
+
+Practical 10
+
+a. Write an R program to demonstrate various error messages in R 
+Programming. 
+ 
+check_positive <- function(val) { 
+  if (val < 0) { 
+    stop("Value must be positive") 
+  } 
+  return(val^2)
+} 
+tryCatch({ 
+  result <- check_positive(-7) 
+  print(result) 
+}, error = function(e) { 
+  print(paste("Error occurred:", e$message)) 
+})
