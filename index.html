@@ -40,12 +40,10 @@
 </head>
 <body>
   <h1>📂 Practical Files Viewer</h1>
-
   <details open>
     <summary>R</summary>
     <pre id="r">Loading...</pre>
   </details>
-
   <script>
     async function loadFile(id, file) {
       try {
@@ -56,9 +54,7 @@
         document.getElementById(id).textContent = "❌ Could not load " + file;
       }
     }
-    loadFile("r", "R.txt");
+    loadFile("r", "rprogram.txt");
   </script>
 </body>
-
 </html>
-
