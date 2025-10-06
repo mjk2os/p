@@ -1,4 +1,3 @@
-
 A. Write a program to display "Hello, World!".
 Source Code:
 #include <iostream> using namespace std; int main() {     cout << "Hello, World!" << endl;
@@ -463,6 +462,7 @@ C.Validate input (e.g., negative age) and throw custom exceptions. Source Code:
     }
     cout << "Program continues after exception handling." << endl;     return 0;
 }
+
 
 
 
